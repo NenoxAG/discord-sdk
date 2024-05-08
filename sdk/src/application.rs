@@ -17,7 +17,7 @@ pub struct OAuth2TokenRequest {
 
 impl crate::Discord {
     pub async fn get_oauth(&self, req: OAuth2TokenRequest) -> Result<String, Error> {
-        let rx = self.send_rpc(CommandKind::GetOAuth2Token, req).await?;
+        let rx = self.send_rpc(CommandKind::GetOAuth2Token, req)?;
 
         handle_response!(rx, Command::GetOAuth2Token(oauth) => {
             Ok(oauth.unwrap().code)
