@@ -64,6 +64,10 @@ pub enum CommandKind {
     /// RPC sent to change the local settings for another user
     #[serde(rename = "SET_USER_VOICE_SETTINGS_2")]
     SetUserVoiceSettings,
+
+    /// RPC sent to retrieve a oauth2 token
+    #[serde(rename = "AUTHORIZE")]
+    GetOAuth2Token,
 }
 
 /// The response to an RPC sent by us.
@@ -105,6 +109,9 @@ pub(crate) enum Command {
     SetVoiceSettings,
     #[serde(rename = "SET_USER_VOICE_SETTINGS_2")]
     SetUserVoiceSettings,
+
+    #[serde(rename = "AUTHORIZE")]
+    GetOAuth2Token(Box<Option<crate::application::OAuth2Token>>),
 }
 
 /// An RPC sent from Discord as JSON, in response to an RPC sent by us.

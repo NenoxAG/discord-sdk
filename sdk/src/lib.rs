@@ -14,6 +14,7 @@ pub mod relations;
 mod types;
 pub mod user;
 pub mod voice;
+pub mod application;
 
 pub use error::{DiscordApiErr, DiscordErr, Error};
 pub use handler::{handlers, wheel, DiscordHandler, DiscordMsg};
