@@ -1,13 +1,13 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use crate::Error;
 use crate::proto::{Command, CommandKind};
 
-#[derive(Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct OAuth2Token {
     code: String,
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct OAuth2TokenRequest {
     pub client_id: String,
     pub prompt: String,
