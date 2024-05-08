@@ -9,10 +9,10 @@ pub struct OAuth2Token {
 
 #[derive(Serialize, Debug)]
 pub struct OAuth2TokenRequest {
-    client_id: String,
-    prompt: String,
-    redirect_url: String,
-    scopes: Vec<String>,
+    pub client_id: String,
+    pub prompt: String,
+    pub redirect_url: String,
+    pub scopes: Vec<String>,
 }
 
 impl crate::Discord {
