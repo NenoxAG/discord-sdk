@@ -21,6 +21,6 @@ impl crate::Discord {
 
         handle_response!(rx, Command::GetOAuth2Token(oauth) => {
             Ok(oauth.unwrap().code)
-        });
+        })
     }
 }
